@@ -4,11 +4,14 @@ using Api_Rest.Controllers.Models;
 using Api_Rest.Data;
 using Microsoft.AspNetCore.Mvc;
 using Api_Rest.HATEOAS;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Api_Rest.Controllers
 {
     [Route("api/v1/[controller]")]
     [ApiController]
+    [Authorize]
     public class ProdutosController : ControllerBase
     {
 
@@ -28,7 +31,15 @@ namespace Api_Rest.Controllers
         public IActionResult Get()
         {
             var produtos = database.Produtos.ToList();
-            return Ok(produtos); //Ok = Status code 200 && dados
+            List<ProdutoContainer> produtosHATEOAS = new List<ProdutoContainer>();
+            foreach(var prod in produtos)
+            {
+                ProdutoContainer produtoHATEOAS  = new ProdutoContainer();
+                produtoHATEOAS.produto = prod;
+                produtoHATEOAS.links = HATEOAS.GetActions(prod.Id.ToString());
+                produtosHATEOAS.Add(produtoHATEOAS);
+            }            
+            return Ok(produtosHATEOAS); //Ok = Status code 200 && dados
         }
 
         [HttpGet("{id}")]
@@ -123,8 +134,7 @@ namespace Api_Rest.Controllers
                 {
                     Response.StatusCode = 404;
                     return new ObjectResult(new {msg ="produto não encontrado"});
-                }
-                
+                }                
             }
             else
             {
@@ -132,9 +142,7 @@ namespace Api_Rest.Controllers
                 return new ObjectResult(new {msg = "Id inválido"});
             }
         }
-
-
-
+        
 
             public class ProdutoTemp
         {

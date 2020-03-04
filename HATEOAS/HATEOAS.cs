@@ -27,7 +27,15 @@ namespace Api_Rest.HATEOAS
 
         public Link[] GetActions(string sufix)
         {
-            Link[]tempLinks = actions.ToArray();
+            //CLONAGEM DE OBJETO
+            Link[]tempLinks = new Link[actions.Count];
+            for(int i = 0; i < tempLinks.Length; i++)
+            {
+                tempLinks[i] = new Link(actions[i].href, actions[i].rel, actions[i].method);
+            }
+
+
+            //MONTAGEM DE LINK 
             foreach(var link in tempLinks)
             {
                 //https:// localhost:5001/api/v1/QualquerCoisaDeSufixoEleIráAceitar

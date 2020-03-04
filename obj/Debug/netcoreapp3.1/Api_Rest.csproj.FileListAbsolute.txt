@@ -43,3 +43,10 @@ C:\Users\ACPA\Desktop\Api_Rest\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Sw
 C:\Users\ACPA\Desktop\Api_Rest\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\ACPA\Desktop\Api_Rest\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\ACPA\Desktop\Api_Rest\obj\Debug\netcoreapp3.1\Api_Rest.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\ACPA\Desktop\Api_Rest\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\ACPA\Desktop\Api_Rest\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\ACPA\Desktop\Api_Rest\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\ACPA\Desktop\Api_Rest\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\ACPA\Desktop\Api_Rest\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\ACPA\Desktop\Api_Rest\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\ACPA\Desktop\Api_Rest\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
